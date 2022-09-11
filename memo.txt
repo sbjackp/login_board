@@ -1,0 +1,54 @@
+table.calam
+signup.name,
+posts.title.
+posts.body,
+posts.created_at
+
+
+
+
+$('#form_submit').on('click', function (event) {
+    event.preventDefault();
+
+    const title = $('.name').val();
+    const body = $('.message').val();
+    const image = document.getElementById('image').files[0];
+
+    console.log(title);
+    console.log(body);
+    console.log(image);
+
+    let fd = new FormData();
+    fd.append('title', title);
+    fd.append('body', body);
+    fd.append('image', image);
+
+    $.ajax({
+        url:'index.php',
+        type:'post',
+        data: fd,
+        processData: false,
+        contentType: false,
+        cache: false,
+    }).done(function (data) {
+      // 成功時の処理
+      console.log('成功');
+      console.log(data);
+    }).fail(function(err) {
+      // 失敗時の処理
+      console.log('失敗');
+      console.log(err);
+    });
+  });
+
+
+
+
+if(isset($_POST)) {
+    var_dump($_POST);
+}
+
+if(isset($_FILES)) {
+    var_dump($_FILES);
+}
+
