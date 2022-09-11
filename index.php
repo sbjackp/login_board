@@ -114,7 +114,7 @@
         <div class="write">
             <?php if (isset($name)) : ?>
                 
-                <h2>投稿はこちら</h2>
+                <h2 style="color: red;">投稿はこちら</h2>
                 <div class="error"></div>
                 <form method="post" enctype="multipart/form-data">
                         <input type="hidden" class="user" value="<?php echo $name ?>">
