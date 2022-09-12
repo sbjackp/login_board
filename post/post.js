@@ -65,7 +65,7 @@ $(() => {
         
         $.ajax({
             type: "POST",
-            url: "post_done.php",
+            url: "/post/post_done.php",
             data: fd,
             processData: false,
             contentType: false,

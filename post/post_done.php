@@ -130,7 +130,7 @@ if(isset($_FILES['image'])) {
 
     
 
-    if(!move_uploaded_file( $_FILES['image']['tmp_name'], './images/'.$file_name)) {
+    if(!move_uploaded_file( $_FILES['image']['tmp_name'], '../images/'.$file_name)) {
         // 投稿に失敗しました
         // exit;
     }
