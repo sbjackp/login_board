@@ -101,7 +101,7 @@
             <ul class="link_items">
                 <?php if (isset($name)) : ?>
                     <li><?php echo $name ?></li>
-                    <li><a href="logout.php" class="logout">ログアウト</a></li>
+                    <li><a href="/logout" class="logout">ログアウト</a></li>
                 <?php else : ?>
                     <li><a href="/login">ログイン</a></li>
                     <li><a href="/signup">新規登録</a></li>
@@ -135,21 +135,21 @@
 
             <!-- <div id="post_list"></div> -->
 
-            <ul >
+            <ul>
                 <?php foreach ( $data as $row ) : ?>
                     <?php if(!isset($row[file_name])) : ?>
                         <div class="lists">
                             <div class="list_title"><?php echo h($row[title]) ?></div>
                             <div class="list_author"><?php echo h($row[author]) ?></div>
                             <div><?php echo h($row[posts_created_at]) ?></div>
-                            <div class="list_body"><?php echo h($row[body]) ?></div>
+                            <div class="list_body return"><?php echo h($row[body]) ?></div>
                         </div>
                     <?php else : ?>
                         <div class="lists">
                             <div class="list_title"><?php echo h($row[title]) ?></div>
                             <div class="list_author"><?php echo h($row[author]) ?></div>
                             <div><?php echo h($row[posts_created_at]) ?></div>
-                            <div class="list_body"><?php echo h($row[body]) ?></div>
+                            <div class="list_body return"><?php echo h($row[body]) ?></div>
                             <img class="post_image" src="/images/<?php echo h($row[file_name]) ?>">
                         </div>
                     <?php endif ; ?>
